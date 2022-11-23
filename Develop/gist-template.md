@@ -23,6 +23,8 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ## Regex Components
 
+A Regex at it's core is a literal, meaning that it should be treated as a constant that does not change in value. To indicate to our program that our Regex expression should be treated as a literal, we surround our expression with the slash `/` character as you'll see soon.
+
 ### Anchors
 
 ### Quantifiers
