@@ -1,6 +1,7 @@
-# Title (replace with your title)
+# Regex tutorial - Matching a Hex Value
 
 Introductory paragraph (replace this with your text)
+`/^#?([a-f0-9]{6}|[a-f0-9]{3})$/`
 
 ## Summary
 
