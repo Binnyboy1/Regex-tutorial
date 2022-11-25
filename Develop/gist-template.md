@@ -10,12 +10,12 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Table of Contents
 
 - [Anchors](#anchors)
-- [Quantifiers](#quantifiers)
+- [Bracket Expressions](#bracket-expressions)
 - [OR Operator](#or-operator)
+- [Quantifiers](#quantifiers)
 - [Character Classes](#character-classes)
 - [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
-- [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
 - [Back-references](#back-references)
@@ -28,8 +28,10 @@ A Regex at it's core is a literal, meaning that it should be treated as a consta
 Sample:
 "This cake is delicious!"
 
-- `/cake/` returns true
-- `/gross/` returns false
+| Regex | Match |
+| ----------- | ----------- |
+| `/cake/` | True |
+| `/gross/` | False |
 
 ### Anchors
 
@@ -41,22 +43,14 @@ Anchors signify whether the search item is limited to the start and/or end of th
 Sample:
 "This cake is delicious!"
 
-- `/^This/` returns true
-- `/delicious!$/` returns true
-- `/^This cake is delicious!$/` returns true
-- `/^cake/` returns false
-- `/cake$/` returns false
-- `/^cake$/` returns false
-
-### Quantifiers
-
-### OR Operator
-
-### Character Classes
-
-### Flags
-
-### Grouping and Capturing
+| Regex | Match |
+| ----------- | ----------- |
+| `/^This/` | True |
+| `/delicious!$/` | True |
+| `/^This cake is delicious!$/` | True |
+| `/^cake/` | False |
+| `/cake$/` | False |
+| `/^cake$/` | False |
 
 ### Bracket Expressions
 
@@ -65,11 +59,31 @@ Square brackets indicate that we are looking for a range of characters instead o
 Sample:
 "This cake is delicious!"
 
-- `^[a-zA-Z]` returns true
-- `^[A-Z]` returns true
-- `^T` returns true
-- `^[a-z]` returns false
-- `[0-9]` returns false
+| Regex | Match |
+| ----------- | ----------- |
+| `/^[a-zA-Z]/` | True |
+| `/^[A-Z]/` | True |
+| `/^T/` | True |
+| `/^[a-z]/` | False |
+| `/[0-9]/` | False |
+
+### OR Operator
+
+The OR operator `|` allows us to have more flexibility in our search options, giving us the choice to search multiple matches and return true if any of them are found.
+
+### Quantifiers
+
+Quantifiers limit or determine how many matches we specify.
+
+Sample:
+
+- `T*`
+
+### Character Classes
+
+### Flags
+
+### Grouping and Capturing
 
 ### Greedy and Lazy Match
 
