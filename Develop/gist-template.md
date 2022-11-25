@@ -71,6 +71,16 @@ Sample:
 
 The OR operator `|` allows us to have more flexibility in our search options, giving us the choice to search multiple matches and return true if any of them are found.
 
+Sample:
+"This cake is delicious!"
+
+| Regex | Match |
+| ----------- | ----------- |
+| `/this\|that/` | False |
+| `/(t\|T)his\|(t\|T)hat/` | True |
+| `/(?\|!\|.)/` | True |
+| `/great\|delicious/` | True |
+
 ### Quantifiers
 
 Quantifiers limit or determine how many matches we specify.
