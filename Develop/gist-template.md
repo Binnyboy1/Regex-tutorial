@@ -92,9 +92,11 @@ Sample:
 | ----------- | ----------- | ----------- |
 | `/this\|that/` | False |
 | `/(t\|T)his\|(t\|T)hat/` | True | `This` |
+| `/[tT]his\|[tT]hat/` | True | `This` |
 | `/(?\|!\|.)/` | True | `!` |
 | `/great\|delicious/` | True | `delicious` |
 | `/(c\|C)(a\|A)(k\|K)(e\|E)/` | True | `cake` |
+| `/[cC][aA][kK][eE]/` | True | `cake` |
 
 ### Quantifiers
 
@@ -109,7 +111,6 @@ Quantifiers limit or determine how many matches we specify.
 - `*` - "zero or more" (0+)
     - Sample: `["hey", "heyyyyy", "he"]`
     - `/hey*/` returns `["hey", "heyyyyy", "he"]`
-    - `/y*/` returns `["y", "yyyyy", ""]`
 - `{ n }` = matches exactly `n` amount of characters
     - Sample: `["two", "three", "four"]`
     - `/\w{4}/` returns `["", "thre", "four"]`
@@ -120,11 +121,23 @@ Quantifiers limit or determine how many matches we specify.
     - Sample: `["eight", "nine", "ten", "eleven"]`
     - `/\w{3,5}/` returns `["eight", "nine", "ten", ""]`
 
+### Grouping and Capturing
+
+We create capture groups by surrounding our regex in parentheses `( ... )` characters. This allows us to isolate or capture specific components of our Regex.
+
+Sample: 
+"CP3 870"
+
+| Regex | Match | Returns | Replace | Returns |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| `/([A-Z0-9]{3}\s[A-Z0-9]{3})/` | True | `CP3 870` | $1 | `CP3 870` |
+| `/[A-Z0-9]{3}\s([A-Z0-9]{3})/` | True | `CP3 870` | $1 | `870` |
+| `/(([A-Z0-9]{3})\s([A-Z0-9]{3}))/` | True | `CP3 870` | $1, $2, $3 | `CP3 870, CP3, 870` |
+| `/([A-Z0-9]{3})\s([A-Z0-9]{3})/` | True | `CP3 870` | $1-$2 | `CP3-870` |
+
 ### Character Classes
 
 ### Flags
-
-### Grouping and Capturing
 
 ### Greedy and Lazy Match
 
