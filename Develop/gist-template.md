@@ -81,23 +81,6 @@ Shorthands for some standard ranges are the following:
 - `\d`: equivalent to `[0-9]`
 - `\s`: equivalent to any whitespace such as spaces, tabs, or linebreaks
 
-### OR Operator
-
-The OR operator `|` allows us to have more flexibility in our search options, giving us the choice to search multiple matches and return true if any of them are found.
-
-Sample:
-"This cake is delicious!"
-
-| Regex | Match | Returns |
-| ----------- | ----------- | ----------- |
-| `/this\|that/` | False |
-| `/(t\|T)his\|(t\|T)hat/` | True | `This` |
-| `/[tT]his\|[tT]hat/` | True | `This` |
-| `/(?\|!\|.)/` | True | `!` |
-| `/great\|delicious/` | True | `delicious` |
-| `/(c\|C)(a\|A)(k\|K)(e\|E)/` | True | `cake` |
-| `/[cC][aA][kK][eE]/` | True | `cake` |
-
 ### Quantifiers
 
 Quantifiers limit or determine how many matches we specify.
@@ -135,7 +118,35 @@ Sample:
 | `/(([A-Z0-9]{3})\s([A-Z0-9]{3}))/` | True | `CP3 870` | $1, $2, $3 | `CP3 870, CP3, 870` |
 | `/([A-Z0-9]{3})\s([A-Z0-9]{3})/` | True | `CP3 870` | $1-$2 | `CP3-870` |
 
+### OR Operator
+
+The OR operator `|` allows us to have more flexibility in our search options, giving us the choice to search multiple matches and return true if any of them are found.
+
+Sample:
+"This cake is delicious!"
+
+| Regex | Match | Returns |
+| ----------- | ----------- | ----------- |
+| `/this\|that/` | False |
+| `/great\|delicious/` | True | `delicious` |
+| `/(t\|T)his\|(t\|T)hat/` | True | `This` |
+| `/(?\|!\|.)/` | True | `!` |
+| `/(c\|C)(a\|A)(k\|K)(e\|E)/` | True | `cake` |
+
+## Bonus Section
+
 ### Character Classes
+
+Character classes or Character sets is a way of specifying a select choice of characters, very similar in comparison to the OR operator. In fact, we can use the same example listed above for replacing the OR operator.
+
+Sample:
+"This cake is delicious!"
+
+| Regex | Match | Returns |
+| ----------- | ----------- | ----------- |
+| `/[tT]his\|[tT]hat/` | True | `This` |
+| `/[?!.]/` | True | `!` |
+| `/[cC][aA][kK][eE]/` | True | `cake` |
 
 ### Flags
 
