@@ -148,11 +148,28 @@ Sample:
 | `/[?!.]/` | True | `!` |
 | `/[cC][aA][kK][eE]/` | True | `cake` |
 
-### Flags
-
 ### Greedy and Lazy Match
 
+This is also not relevant to finding Hex Values but still relevant enough that it's worth covering. At it's core, a greedy match will search for the largest match within it's search area while a lazy match will search for the smallest match.
+
+Sample:
+`<a href="#about-me">About Me</a>`
+
+| Regex | Match | Returns |
+| ----------- | ----------- | ----------- |
+| `/<.*>/` | True | `<a href="#about-me">About Me</a>` |
+| `/<.*?>/` | True | `<a href="#about-me">`, `</a>` |
+
 ### Boundaries
+
+Boundaries are very helpful in finding strings of a specific length. So helpful that they are a necessary inclusion in the bonus section. Let's say for example we are trying to find words that have 4 letters, no more, no less.
+
+Sample:
+"This cake is delicious!"
+
+| Regex | Match | Returns |
+| ----------- | ----------- | ----------- |
+| `/\b\w{4}\b/` | True | `This`, `cake` |
 
 ### Back-references
 
