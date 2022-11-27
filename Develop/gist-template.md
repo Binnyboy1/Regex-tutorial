@@ -1,25 +1,43 @@
 # Regex tutorial - Matching a Hex Value
 
-Introductory paragraph (replace this with your text)
-`/^#?([a-f0-9]{6}|[a-f0-9]{3})$/`
+This will be a regex tutorial breaking down each component tied to this Hex Value regex.
+
+The Hex Value regex in question: `/^#?([a-f0-9]{6}|[a-f0-9]{3})$/`
 
 ## Summary
 
 Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
 
+Regex or Regular Expressions is essentially a compact way of matching patterns found in a string of words. Regex is commonly used as a method of validation for inputs.
+
+For our Hex Value Regex, it may look daunting at first, but we can break it down into simple, digestable parts.
+
+```
+/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+
+/^#?    ([a-f0-9]{6}|[a-f0-9]{3})   $/
+```
+
+Outer
+| Anchor | Quantifier | Grouping | Anchor |
+| ----------- | ----------- | ----------- | ----------- |
+| `/^` | `#?` |  `(...)` |  `$/` |
+
+Inner
+| Bracket Expression | Quantifier | OR | Bracket Expression | Quantifier |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| `[a-f0-9]` | `{6}` |  `\|` |  `[a-f0-9]` | `{3}` |
+
 ## Table of Contents
 
 - [Anchors](#anchors)
 - [Bracket Expressions](#bracket-expressions)
-- [OR Operator](#or-operator)
 - [Quantifiers](#quantifiers)
-- [Character Classes](#character-classes)
-- [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
+- [OR Operator](#or-operator)
+- [Character Classes](#character-classes)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
 
@@ -171,10 +189,10 @@ Sample:
 | ----------- | ----------- | ----------- |
 | `/\b\w{4}\b/` | True | `This`, `cake` |
 
-### Back-references
-
-### Look-ahead and Look-behind
-
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Ian Binstock
+
+- GitHub: [Binnyboy1](https://github.com/Binnyboy1)
+- Email: [ibinstock@outlook.com](mailto:ibinstock@outlook.com)
+- Twitter: [Binnyboy](https://twitter.com/Binstock_Ian)
